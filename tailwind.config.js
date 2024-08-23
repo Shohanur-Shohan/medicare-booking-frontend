@@ -1,5 +1,5 @@
-// import daisyui from "daisyui";
-// const themes = require("daisyui/src/theming/themes");
+import daisyui from "daisyui";
+const themes = require("daisyui/src/theming/themes");
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -8,10 +8,13 @@ export default {
       colors: {
         buttonBgColor: "0067FF",
         yellowColor: "feb60d",
-        purpleColor: "0067FF",
-        irisBlueColor: "0067FF",
-        headingColor: "0067FF",
-        textColor: "0067FF",
+        purpleColor: "9711ff",
+        irisBlueColor: "01b5c5",
+        headingColor: "181a1e",
+        textColor: "4e545f",
+      },
+      boxShadow: {
+        panelShadow: "rgba(17,12,46,0.15) 0px 48px 100px 0px;",
       }
     }
   },
