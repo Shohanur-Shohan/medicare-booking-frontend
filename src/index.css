@@ -9,6 +9,11 @@ body {
 
 }
 
+.active {
+  color: #2767FF;
+  font-weight: 800;
+}
+
 @layer base {
   section {
     @apply py-[75px]
