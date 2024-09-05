@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="w-full border-t border-secondary/30">
+      <footer className="w-full border-t ">
         {/* Grid */}
         <div className="w-full bg-white pb-[20px] pt-[40px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5 max-w-[1536px] mx-auto px-4 lg:px-7.5 xl:px-10 pb-4 pt-8">

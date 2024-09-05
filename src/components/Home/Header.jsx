@@ -3,13 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   
   return (
-    <header className="w-full bg-[url('/assets/images/header-bg.png')] bg-no-repeat bg-cover shadow-md shadow-b-[5px] -shadow-spread-2">
-      <div className="navbar max-w-[1536px] mx-auto justify-between flex items-center px-2 sm:px-4 lg:px-7.5 xl:px-10 py-4">
+    <header className="w-full bg-[url('/assets/images/header-bg.png')] bg-no-repeat bg-cover shadow-md shadow-b-[4px] -shadow-spread-2">
+      <div className="navbar container mx-auto justify-between flex items-center px-2 sm:px-4 lg:px-[20px] py-4 md:py-6">
         <div className="navbar-start">
           <Link to={"/"} className="">
             <img
               src="/assets/images/logo.png"
-              className="max-w-[130px] sm:max-w-[140px] md:max-w-[150px] xl:max-w-[180px] max-h-[60px]"
+              className="w-[150px] md:w-[160px]  max-h-[50px]"
               alt="logo"
             />
           </Link>
