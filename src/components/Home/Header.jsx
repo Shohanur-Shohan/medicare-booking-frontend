@@ -27,7 +27,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to={"/find-a-doctor"}
+                to={"/doctors"}
                 className="font-semibold transition-colors text-textColor hover:text-blueColor"
               >
                 Find a doctor
@@ -138,7 +138,7 @@ const Header = () => {
                 </li>
                 <li className="mb-5 ">
                   <NavLink
-                    to={"/find-a-doctor"}
+                    to={"/doctors"}
                     className="my-1 font-semibold transition-colors border border-transparent text-textColor hover:text-blueColor"
                   >
                     Find a doctor

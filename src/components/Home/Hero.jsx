@@ -34,7 +34,7 @@ function Hero() {
               </div>
             </div>
           {/* hero-content right*/}
-            <div className="grid max-w-[700px] mx-auto lg:m-0 lg:w-full items-center justify-between grid-cols-5 col-span-2 gap-4 lg:grid-cols-3 lg:col-span-1">
+            <div className="grid max-w-[700px] mx-auto lg:m-0 lg:w-full items-center justify-between grid-cols-5 col-span-2 gap-2 sm:gap-4 lg:grid-cols-3 lg:col-span-1">
               <div className="flex justify-end h-full col-span-3 lg:col-span-2 lg:items-center">
                 <img src="/assets/images/hero-img01.png" className="" alt="img" />
               </div>
