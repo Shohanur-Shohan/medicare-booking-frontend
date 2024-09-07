@@ -2,10 +2,10 @@
 function Hero() {
   return (
     <section className="w-full bg-[url('/assets/images/hero-bg.png')] bg-no-repeat bg-cover bg-center">
-      <div className="container min-h-[90vh] flex items-center">
+      <div className="container min-h-[90vh] flex items-center px-2 sm:px-4 lg:px-[20px]">
         <div className="grid items-center justify-between w-full h-full grid-cols-1 gap-4 lg:grid-cols-2 py-[120px] lg:pt-0">
           {/* hero-content left*/}
-            <div className="md:max-w-[700px] lg:w-full mx-auto col-span-2 lg:col-span-1">
+            <div className="md:max-w-[700px] lg:w-full col-span-2 lg:col-span-1">
               <h1 className="text-center lg:text-left text-[36px] lg:max-w-[570px] leading-[46px] text-headingColor font-[800] md:text-[42px] lg:text-[46px] xl:text-[55px] md:leading-[50px] lg:leading-[55px] xl:leading-[70px]">We help patients live a healthy, longer life.</h1>
               <p className="text-center lg:text-left text-para text-[15px] sm:text-[16px] xl:text-[18px]">Your health is our priority. We provide compassionate, personalized care with a focus on your well-being. Trust our expert team to guide you to better health with the latest in medical treatments.</p>
               <div className="mt-[38px]"></div>

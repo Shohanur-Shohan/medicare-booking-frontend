@@ -15,7 +15,7 @@ body {
 
 @layer components {
   .container {
-    @apply max-w-full w-[1536px] px-2 md:px-5 mx-auto
+    @apply max-w-full w-[1536px] mx-auto
   }
 
   /* .btn {
