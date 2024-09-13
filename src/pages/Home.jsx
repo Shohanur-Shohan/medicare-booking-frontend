@@ -1,13 +1,17 @@
-import About from "../components/Home/About"
-import Hero from "../components/Home/Hero"
-import Services from "../components/Home/Services"
+import About from "../components/Home/About";
+import Features from "../components/Home/Features";
+import Hero from "../components/Home/Hero";
+import OurServices from "../components/Home/OurServices";
+import Services from "../components/Home/Services";
 
 export const Home = () => {
   return (
     <section>
-      <Hero/>
-      <Services/>
-      <About/>
+      <Hero />
+      <OurServices />
+      <About />
+      <Services />
+      <Features />
     </section>
-  )
-}
+  );
+};

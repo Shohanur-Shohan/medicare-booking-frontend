@@ -18,9 +18,9 @@ body {
     @apply max-w-full w-[1536px] mx-auto
   }
 
-  /* .btn {
-    @apply primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px]
-  } */
+  .btn {
+    @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px]
+  }
 
   .heading {
     @apply text-[44px] leading-[54px] font-[700] text-headingColor
