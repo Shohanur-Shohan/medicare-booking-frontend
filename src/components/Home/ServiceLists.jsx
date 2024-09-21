@@ -1,5 +1,5 @@
 import ServiceCard from "./ServiceCard";
-import { services } from "../../../public/assets/data/services";
+import { services } from "../../data/services";
 
 function ServiceLists() {
   return (
