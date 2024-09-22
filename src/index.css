@@ -31,6 +31,20 @@ body {
   }
 }
 
+.swiper {
+  padding-bottom: 60px !important;
+}
+
+.swiper-slide-next {
+  background-color: #2767FF;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.swiper-slide-next p {
+  color: #fff;
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     @apply w-full
