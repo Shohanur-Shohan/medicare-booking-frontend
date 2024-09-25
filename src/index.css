@@ -45,6 +45,18 @@ body {
   color: #fff;
 }
 
+/* daisiui */
+.tab-content {
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+
+}
+
+.tab:is(input:checked) {
+  border-color: oklch(0.53 0.28 263.34);
+}
+
 @media only screen and (max-width: 1024px) {
   .container {
     @apply w-full

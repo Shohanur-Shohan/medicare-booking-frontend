@@ -1,13 +1,13 @@
-/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 const DoctorCard = ({ doctor }) => {
   const {
     name,
+    id,
     avgRating,
     totalRating,
     photo,
-    specialization,
+    specialty,
     totalPatients,
     hospital,
   } = doctor;
@@ -22,7 +22,7 @@ const DoctorCard = ({ doctor }) => {
 
       <div className="mt-2 flex items-center justify-between lg:mt-4">
         <span className="rounded bg-[#CCF0F3] px-2 py-1 text-[12px] font-semibold leading-4 text-irisBlueColor lg:px-2 lg:py-2 lg:text-[16px] lg:leading-7 xl:px-6">
-          {specialization}
+          {specialty}
         </span>
 
         <div className="flex items-center gap-[6px]">
@@ -46,7 +46,7 @@ const DoctorCard = ({ doctor }) => {
           </p>
         </div>
         <Link
-          to="/doctors"
+          to={`/doctor-details/${id}`}
           className="group flex h-[44px] w-[44px] items-center justify-center rounded-full border border-solid border-[#181A1E] hover:border-none hover:bg-primaryColor"
         >
           <BsArrowRight className="h-5 w-6 group-hover:text-white" />

@@ -36,7 +36,7 @@ export const Router = createBrowserRouter([
         element: <Doctors></Doctors>,
       },
       {
-        path: "/doctors-details",
+        path: "/doctor-details/:id",
         errorElement: <Error />,
         element: <DoctorDetails></DoctorDetails>,
       },
