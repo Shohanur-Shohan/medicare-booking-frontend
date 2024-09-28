@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import { doctors } from "../../data/doctors";
 import { useState } from "react";
 import { useMemo } from "react";
+import DoctorFeedback from "../../components/Doctor/DoctorFeedback";
+import Testimonial from "../../components/Home/Testimonials/Testimonials";
 
 export const DoctorDetails = () => {
   const [doctorData, setDoctorData] = useState(null);
   const doctorId = useParams();
-  console.log(doctorId);
+  // console.log(doctorId);
 
   useMemo(() => {
     (() => {
@@ -18,7 +20,7 @@ export const DoctorDetails = () => {
     })();
   }, [doctorId]);
 
-  console.log(doctorData);
+  // console.log(doctorData);
 
   return (
     <section className="w-full">
@@ -108,147 +110,123 @@ export const DoctorDetails = () => {
             </div>
           </div>
 
-          {/* tab */}
-          <div role="tablist" className="tabs tabs-bordered mt-[50px]">
-            <input
-              type="radio"
-              name="my_tabs_1"
-              role="tab"
-              className="tab text-[16px] font-semibold leading-7 text-headingColor"
-              aria-label="About"
-            />
-            <div
-              role="tabpanel"
-              className="tab-content border-t border-solid border-[#0066ff34] py-10"
-            >
-              {/* tab1 content */}
-              <div>
-                <h3 className="flex items-center gap-2 text-[20px] font-semibold leading-[30px] text-headingColor">
-                  About of
-                  <span className="text-[24px] font-bold leading-9 text-irisBlueColor">
-                    Riyad Hossain
-                  </span>
-                </h3>
-                <p className="text__para mt-2">{doctorData[0].about}</p>
-              </div>
-              {/* tab1 content */}
-            </div>
+          <div className="grid grid-cols-1 gap-[50px] lg:grid-cols-2 xl:grid-cols-3">
+            <div className="col-span-2 xl:col-span-2">
+              {/* tab */}
+              <div role="tablist" className="tabs tabs-bordered mt-[50px]">
+                <input
+                  type="radio"
+                  name="my_tabs_1"
+                  role="tab"
+                  className="tab text-[16px] font-semibold leading-7 text-headingColor"
+                  aria-label="About"
+                />
+                <div
+                  role="tabpanel"
+                  className="tab-content border-t border-solid border-[#0066ff34] py-10"
+                >
+                  {/* tab1 content */}
+                  <div>
+                    <h3 className="flex items-center gap-2 text-[20px] font-semibold leading-[30px] text-headingColor">
+                      About of
+                      <span className="text-[24px] font-bold leading-9 text-irisBlueColor">
+                        Riyad Hossain
+                      </span>
+                    </h3>
+                    <p className="text__para mt-2">{doctorData[0].about}</p>
+                  </div>
+                  {/* tab1 content */}
+                </div>
 
-            <input
-              type="radio"
-              name="my_tabs_1"
-              role="tab"
-              className="tab text-[16px] font-semibold leading-7 text-headingColor"
-              aria-label="Feedback"
-              defaultChecked
-            />
-            <div
-              role="tabpanel"
-              className="tab-content border-t border-solid border-[#0066ff34] py-10"
-            >
-              {/* tab2 content */}
-              <div>
-                <h3 className="flex items-center gap-2 text-[20px] font-semibold leading-[30px] text-headingColor">
-                  Feedback of
-                  <span className="text-[24px] font-bold leading-9 text-irisBlueColor">
-                    Riyad Hossain
-                  </span>
-                </h3>
-                <p className="text__para mt-2">
-                  Thank you for your excellent care during my visit. I truly
-                  appreciate your patience, clear explanations, and the way you
-                  made me feel comfortable. Your professionalism and attention
-                  to detail gave me confidence in the treatment plan. I’m
-                  grateful for your dedication and highly recommend you to
-                  others.
-                </p>
+                <input
+                  type="radio"
+                  name="my_tabs_1"
+                  role="tab"
+                  className="tab text-[16px] font-semibold leading-7 text-headingColor"
+                  aria-label="Feedback"
+                  defaultChecked
+                />
+                <div
+                  role="tabpanel"
+                  className="tab-content border-t border-solid border-[#0066ff34] py-10"
+                >
+                  {/* tab2 content */}
+                  <DoctorFeedback />
+                  {/* tab2 content */}
+                </div>
               </div>
-              {/* tab1 content */}
-            </div>
-          </div>
-          {/* ///////////////////// */}
-          {/* tab */}
-          <div className="mt-[50px]">
-            <div>
-              {/* <div>
-                <h3 className="flex items-center gap-2 text-[20px] font-semibold leading-[30px] text-headingColor">
-                  About of
-                  <span className="text-[24px] font-bold leading-9 text-irisBlueColor">
-                    Riyad Hossain
-                  </span>
-                </h3>
-                <p className="mt-2 text__para">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Voluptates perferendis optio odio eveniet dicta sequi
-                  distinctio, enim tempore. Expedita at eligendi necessitatibus,
-                  quia nihil corrupti consequatur saepe hic sit maxime.
-                </p>
-              </div> */}
-              <div className="mt-12">
-                <h3 className="text-[20px] font-semibold leading-[30px] text-headingColor">
-                  Education
-                </h3>
-                <ul className="pt-4 md:p-5">
-                  <li className="mb-[30px] flex flex-col sm:flex-row sm:items-end sm:justify-between md:gap-5">
-                    <div>
-                      <span className="text-[15px] font-semibold leading-6 text-irisBlueColor">
-                        June 4, 2015 - June 4, 2018
-                      </span>
-                      <p className="text-[16px] font-medium leading-6 text-textColor">
-                        PHD in Surgeon
-                      </p>
-                    </div>
-                    <p className="text-[14px] font-medium leading-5 text-textColor">
-                      New Apollo Hospital, New York.
-                    </p>
-                  </li>
-                  <li className="mb-[30px] flex flex-col sm:flex-row sm:items-end sm:justify-between md:gap-5">
-                    <div>
-                      <span className="text-[15px] font-semibold leading-6 text-irisBlueColor">
-                        June 4, 2015 - August 4, 2019
-                      </span>
-                      <p className="text-[16px] font-medium leading-6 text-textColor">
-                        PHD in Surgeon
-                      </p>
-                    </div>
-                    <p className="text-[14px] font-medium leading-5 text-textColor">
-                      New Apollo Hospital, New York.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-12">
-                <h3 className="text-[20px] font-semibold leading-[30px] text-headingColor">
-                  Experience
-                </h3>
-                <ul className="grid gap-[30px] pt-4 sm:grid-cols-2 md:p-5">
-                  <li className="rounded bg-[#fff9ea] p-4">
-                    <span className="text-[15px] font-semibold leading-6 text-yellowColor">
-                      June 4, 2015 - August 4, 2019
-                    </span>
-                    <p className="text-[16px] font-medium leading-6 text-textColor">
-                      Sr. Surgeon
-                    </p>
-                    <p className="text-[14px] font-medium leading-5 text-textColor">
-                      New Apollo Hospital, New York.
-                    </p>
-                  </li>
-                  <li className="rounded bg-[#fff9ea] p-4">
-                    <span className="text-[15px] font-semibold leading-6 text-yellowColor">
-                      June 4, 2015 - August 4, 2019
-                    </span>
-                    <p className="text-[16px] font-medium leading-6 text-textColor">
-                      Sr. Surgeon
-                    </p>
-                    <p className="text-[14px] font-medium leading-5 text-textColor">
-                      New Apollo Hospital, New York.
-                    </p>
-                  </li>
-                </ul>
+              {/* ///////////////////// */}
+              <div className="mt-[50px]">
+                <div>
+                  <div className="mt-12">
+                    <h3 className="mb-2 text-[20px] font-semibold leading-[30px] text-headingColor lg:text-[24px] lg:font-bold">
+                      Education
+                    </h3>
+                    <ul className="">
+                      <li className="mb-[30px] flex flex-col sm:flex-row sm:items-end sm:justify-between md:gap-5">
+                        <div>
+                          <span className="text-[15px] font-semibold leading-6 text-irisBlueColor">
+                            June 4, 2015 - June 4, 2018
+                          </span>
+                          <p className="text-[16px] font-medium leading-6 text-textColor">
+                            PHD in Surgeon
+                          </p>
+                        </div>
+                        <p className="text-[14px] font-medium leading-5 text-textColor">
+                          New Apollo Hospital, New York.
+                        </p>
+                      </li>
+                      <li className="mb-[30px] flex flex-col sm:flex-row sm:items-end sm:justify-between md:gap-5">
+                        <div>
+                          <span className="text-[15px] font-semibold leading-6 text-irisBlueColor">
+                            June 4, 2015 - August 4, 2019
+                          </span>
+                          <p className="text-[16px] font-medium leading-6 text-textColor">
+                            PHD in Surgeon
+                          </p>
+                        </div>
+                        <p className="text-[14px] font-medium leading-5 text-textColor">
+                          New Apollo Hospital, New York.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="mt-12">
+                    <h3 className="mb-4 text-[20px] font-semibold leading-[30px] text-headingColor lg:text-[24px] lg:font-bold">
+                      Experience
+                    </h3>
+                    <ul className="grid gap-[30px] sm:grid-cols-2">
+                      <li className="rounded bg-[#fff9ea] p-4">
+                        <span className="text-[15px] font-semibold leading-6 text-yellowColor">
+                          June 4, 2015 - August 4, 2019
+                        </span>
+                        <p className="text-[16px] font-medium leading-6 text-textColor">
+                          Sr. Surgeon
+                        </p>
+                        <p className="text-[14px] font-medium leading-5 text-textColor">
+                          New Apollo Hospital, New York.
+                        </p>
+                      </li>
+                      <li className="rounded bg-[#fff9ea] p-4">
+                        <span className="text-[15px] font-semibold leading-6 text-yellowColor">
+                          June 4, 2015 - August 4, 2019
+                        </span>
+                        <p className="text-[16px] font-medium leading-6 text-textColor">
+                          Sr. Surgeon
+                        </p>
+                        <p className="text-[14px] font-medium leading-5 text-textColor">
+                          New Apollo Hospital, New York.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="col-span-2 mt-[50px] lg:col-span-2 xl:col-span-1"></div>
           </div>
-          {/* tab */}
+
+          <Testimonial />
         </div>
       )}
     </section>

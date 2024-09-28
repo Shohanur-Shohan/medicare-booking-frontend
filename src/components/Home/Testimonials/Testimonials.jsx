@@ -11,6 +11,14 @@ const Testimonial = () => {
   return (
     <section className="w-full">
       <div className="container px-2 py-[60px] sm:px-4 sm:pb-[100px] sm:pt-[60px] lg:px-[20px]">
+        <div className="mx-auto xl:w-[470px]">
+          <h2 className="heading text-center">What our patient say</h2>
+          <p className="text__para text-center">
+            World-class care for everyone. Our health System offers unmatched,
+            expert health care.
+          </p>
+        </div>
+
         <div className="mt-[30px] lg:mt-[55px]">
           <Swiper
             spaceBetween={30}
