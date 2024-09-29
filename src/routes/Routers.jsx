@@ -5,9 +5,10 @@ import Contact from "../pages/Contact";
 import Services from "../pages/Services/ServicesPage";
 import { Doctors } from "../pages/Doctors/Doctors";
 import { DoctorDetails } from "../pages/Doctors/DoctorDetails";
-import { Login } from "../pages/Login";
-import { SignUp } from "../pages/SignUp";
+// import { Login } from "../pages/Login";
 import Error from "../pages/Error/Error";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 export const Router = createBrowserRouter([
   {
@@ -17,38 +18,32 @@ export const Router = createBrowserRouter([
     children: [
       {
         path: "/",
-        errorElement: <Error />,
         element: <Home></Home>,
       },
       {
         path: "/contact",
-        errorElement: <Error />,
         element: <Contact></Contact>,
       },
       {
         path: "/services",
-        errorElement: <Error />,
         element: <Services></Services>,
       },
       {
         path: "/doctors",
-        errorElement: <Error />,
         element: <Doctors></Doctors>,
       },
       {
         path: "/doctor-details/:id",
-        errorElement: <Error />,
         element: <DoctorDetails></DoctorDetails>,
       },
       {
         path: "/login",
-        errorElement: <Error />,
+        // element: <Login></Login>,
         element: <Login></Login>,
       },
       {
         path: "/register",
-        errorElement: <Error />,
-        element: <SignUp></SignUp>,
+        element: <Register></Register>,
       },
     ],
   },
