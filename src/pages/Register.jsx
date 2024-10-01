@@ -12,7 +12,14 @@ const Register = () => {
   } = useForm();
 
   const submitForm = (data) => {
-    console.log(data);
+    const email = data?.email;
+    const full_name = data?.full_name;
+    const password = data?.password;
+    const gender = data?.gender;
+    const role = data?.role;
+    const photoUrl = data?.photo[0];
+
+    console.log({ full_name, email, password, gender, role, photoUrl });
   };
 
   return (
@@ -114,6 +121,8 @@ const Register = () => {
                   type="file"
                   name="photo"
                   id="customFile"
+                  {...register("photo")}
+                  required
                   accept=".jpg, .png"
                   className="absolute left-0 top-0 h-full w-full cursor-pointer opacity-0"
                 />
