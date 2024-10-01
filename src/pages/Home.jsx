@@ -9,15 +9,17 @@ import Testimonial from "../components/Home/Testimonials/Testimonials";
 
 export const Home = () => {
   return (
-    <section>
-      <Hero />
-      <OurServices />
-      <About />
-      <Services />
-      <Features />
-      <OurDoctors />
-      <Faq />
-      <Testimonial />
-    </section>
+    <>
+      <section>
+        <Hero />
+        <OurServices />
+        <About />
+        <Services />
+        <Features />
+        <OurDoctors />
+        <Faq />
+        <Testimonial />
+      </section>
+    </>
   );
 };
