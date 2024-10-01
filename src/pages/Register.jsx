@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [eye, setEye] = useState(false);
@@ -8,6 +9,7 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -20,6 +22,8 @@ const Register = () => {
     const photoUrl = data?.photo[0];
 
     console.log({ full_name, email, password, gender, role, photoUrl });
+    toast.success("Registration successfull!");
+    reset();
   };
 
   return (
