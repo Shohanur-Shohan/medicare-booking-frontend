@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const [eye, setEye] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const submitForm = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="lg:px-7.5 mx-auto flex min-h-[90vh] max-w-[600px] items-center justify-center px-2 py-[80px] sm:px-4 md:py-[100px] xl:px-10">
@@ -54,7 +64,7 @@ const Login = () => {
               Or
             </div>
             {/* Form */}
-            <form>
+            <form onSubmit={handleSubmit(submitForm)}>
               <div className="grid gap-y-4">
                 {/* Form Group */}
                 <div>
@@ -66,6 +76,7 @@ const Login = () => {
                       type="email"
                       id="email"
                       name="email"
+                      {...register("email")}
                       className="block w-full rounded-lg border border-gray-200 bg-[#fff] px-4 py-3 text-sm shadow-sm focus:border-[#3B61DD] focus:ring-[#3B61DD]"
                       required
                       placeholder="Enter your email"
@@ -102,6 +113,7 @@ const Login = () => {
                       type={`${eye ? "text" : "password"}`}
                       id="password"
                       name="password"
+                      {...register("password")}
                       className="block w-full rounded-lg border border-gray-200 bg-[#fff] px-4 py-3 text-sm shadow-sm focus:border-[#3B61DD] focus:ring-[#3B61DD]"
                       required
                       placeholder=".........."

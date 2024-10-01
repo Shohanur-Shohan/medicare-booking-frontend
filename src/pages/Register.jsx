@@ -1,8 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
   const [eye, setEye] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const submitForm = (data) => {
+    console.log(data);
+  };
 
   return (
     <section className="mx-auto flex min-h-[90vh] max-w-[1170px] items-center justify-center px-2 py-[100px] sm:px-5 xl:px-0">
@@ -20,14 +31,15 @@ const Register = () => {
           <h3 className="mb-10 text-[22px] font-bold leading-9 text-headingColor md:text-[28px]">
             Create an <span className="text-primaryColor">account</span>
           </h3>
-          <form>
+          <form onSubmit={handleSubmit(submitForm)}>
             <div className="mb-5">
               <input
                 type="name"
                 placeholder="Full Name"
-                name="name"
+                name="full_name"
+                {...register("full_name")}
                 className="w-full cursor-pointer border-b border-solid border-[#0066ff61] px-2 py-3 text-[16px] leading-7 text-headingColor placeholder:text-textColor focus:border-b-primaryColor focus:outline-none"
-                defaultValue=""
+                required
               />
             </div>
             <div className="mb-5">
@@ -35,24 +47,40 @@ const Register = () => {
                 type="email"
                 placeholder="Enter your Email"
                 name="email"
+                {...register("email")}
                 className="w-full cursor-pointer border-b border-solid border-[#0066ff61] px-2 py-3 text-[16px] leading-7 text-headingColor placeholder:text-textColor focus:border-b-primaryColor focus:outline-none"
-                defaultValue=""
+                required
               />
             </div>
-            <div className="mb-5">
+            <div className="relative mb-5">
               <input
-                type="password"
+                type={`${eye ? "text" : "password"}`}
                 placeholder="Password"
                 name="password"
+                {...register("password")}
                 className="w-full cursor-pointer border-b border-solid border-[#0066ff61] px-2 py-3 text-[16px] leading-7 text-headingColor placeholder:text-textColor focus:border-b-primaryColor focus:outline-none"
-                defaultValue=""
+                required
               />
+              <div
+                className="absolute right-2 top-[30%]"
+                onClick={() => setEye(!eye)}
+              >
+                <img
+                  className="h-5 w-5"
+                  src={`${
+                    eye ? "/assets/eyeOpen.svg" : "/assets/closedEye.svg"
+                  }`}
+                  alt="eye"
+                />
+              </div>
             </div>
             <div className="mb-5 flex items-center justify-between">
               <label className="text-[16px] font-bold leading-7 text-headingColor">
                 Are you a:
                 <select
                   name="role"
+                  {...register("role")}
+                  required
                   className="ml-2 px-4 py-3 text-[15px] font-semibold leading-7 text-textColor focus:outline-none"
                 >
                   <option value="patient">Patient</option>
@@ -63,6 +91,8 @@ const Register = () => {
                 Gender:
                 <select
                   name="gender"
+                  {...register("gender")}
+                  required
                   className="ml-2 px-4 py-3 text-[15px] font-semibold leading-7 text-textColor focus:outline-none"
                 >
                   <option value="male">Male</option>
@@ -96,8 +126,11 @@ const Register = () => {
               </div>
             </div>
             <div className="mt-7">
-              <button className="w-full rounded-lg bg-primaryColor px-4 py-3 text-[18px] leading-[30px] text-white">
-                Login
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-primaryColor px-4 py-3 text-[18px] leading-[30px] text-white"
+              >
+                Register
               </button>
             </div>
             <p className="mt-5 text-center text-textColor">
